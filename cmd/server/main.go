@@ -1,7 +1,7 @@
 package main
 
 import (
-	"hornet-docs/internal/application/service"
+	"hornet-docs/internal/application"
 	"hornet-docs/internal/infrastructure/adapter"
 	"hornet-docs/internal/interface/http"
 
@@ -11,7 +11,7 @@ import (
 func main() {
 	repo := adapter.NewInMemoryRepository()
 
-	documentService := service.NewDocumentService(repo)
+	documentService := application.NewDocumentService(repo)
 
 	handler := http.NewDocumentHandler(documentService)
 

@@ -1,7 +1,7 @@
 package http
 
 import (
-	"hornet-docs/internal/application/service"
+	"hornet-docs/internal/application"
 	"hornet-docs/internal/infrastructure/model"
 	"net/http"
 
@@ -9,10 +9,10 @@ import (
 )
 
 type DocumentHandler struct {
-	service *service.DocumentService
+	service *application.DocumentService
 }
 
-func NewDocumentHandler(s *service.DocumentService) *DocumentHandler {
+func NewDocumentHandler(s *application.DocumentService) *DocumentHandler {
 	return &DocumentHandler{service: s}
 }
 
